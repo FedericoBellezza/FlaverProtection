@@ -8,7 +8,10 @@ export default function Homepage() {
         <h1 className="text-5xl font-black mt-15 text-center text-green-700">
           Flaver Protection
         </h1>
-        <HorizontalScroller array={products} />
+        <HorizontalScroller
+          array={products}
+          title="Scarpe Antinfortunistiche"
+        />
       </div>
     </>
   );
