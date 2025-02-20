@@ -26,12 +26,12 @@ export default function ProductsListPage() {
   return (
     <>
       <div className="custom-container">
-        <h1 className="text-5xl font-black mt-15 text-center text-green-700 mb-15">
+        <h1 className="text-4xl font-black mt-15 text-center text-green-700 mb-15">
           Tutti i nostri prodotti
         </h1>
 
-        <div className="flex gap-3  p-3">
-          {array.map((e) => (
+        <div className="flex flex-wrap justify-center gap-3  p-3">
+          {array.map((e, index) => (
             <span
               key={e}
               onClick={() => {

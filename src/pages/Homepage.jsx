@@ -10,20 +10,11 @@ export default function Homepage() {
   products && console.log(products);
   return (
     <>
-      <ul>
-        {products &&
-          products.map((product) => (
-            <li key={product.id}>
-              {product.name}, {product.price}, {product.description},{" "}
-              {product.image}
-            </li>
-          ))}
-      </ul>
       <div className="custom-container">
         <h1 className="text-5xl font-black mt-15 text-center text-green-700">
           Flaver Protection
         </h1>
-        {products && <HorizontalScroller title="Scarpe Antinfortunistiche" />}
+        {products && <HorizontalScroller title="Antinfortunistica" />}
       </div>
     </>
   );

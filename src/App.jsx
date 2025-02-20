@@ -5,6 +5,7 @@ import ContactPage from "./pages/ContactPage";
 import DefaultLayout from "./layouts/DefaultLayout";
 import ProductsListPage from "./pages/ProductsListPage";
 import { GlobalContextProvider } from "./context/GlobalContext";
+import ProductsManage from "./pages/ProductsManage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route index element={<Homepage />} />
             <Route path="contatti" element={<ContactPage />} />
             <Route path="prodotti" element={<ProductsListPage />} />
+            <Route path="gestisci-prodotti" element={<ProductsManage />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -40,9 +40,9 @@
   }
 }
 
-.products-image {
+/* .products-image {
   width: 1000px;
-}
+} */
 
 /* .scroller-container {
   mask-image: linear-gradient(
@@ -56,4 +56,8 @@
 
 body {
   background-color: #f3fff3;
+}
+
+.product-card {
+  width: 300px;
 }

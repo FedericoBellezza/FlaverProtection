@@ -1,5 +1,6 @@
 import ProductCard from "./ProductImage";
 import { useGlobalContext } from "../context/GlobalContext";
+import Card from "./Card";
 
 export default function HorizontalScroller({ title }) {
   const { products } = useGlobalContext();
@@ -12,10 +13,10 @@ export default function HorizontalScroller({ title }) {
           vedi di più..
         </a>
       </div>
-      <div className="flex overflow-x-scroll gap-3 scroller-container">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <div className="flex overflow-x-scroll scroller-container">
+        {products.map(
+          (element, i) => i < 10 && <Card key={element.id} product={element} />
+        )}
       </div>
     </div>
   );
