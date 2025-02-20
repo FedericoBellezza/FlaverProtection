@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 
 export default function ProductsManage() {
-  const { products, getProducts, prod } = useGlobalContext();
-  useEffect(() => prod, []);
+  const { products, getProducts } = useGlobalContext();
+  useEffect(() => getProducts, []);
   products && console.log(products);
 
   return (
