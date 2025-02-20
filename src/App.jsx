@@ -4,7 +4,10 @@ import ContactPage from "./pages/ContactPage";
 
 import DefaultLayout from "./layouts/DefaultLayout";
 import ProductsListPage from "./pages/ProductsListPage";
-import { GlobalContextProvider } from "./context/GlobalContext";
+import {
+  GlobalContextProvider,
+  useGlobalContext,
+} from "./context/GlobalContext";
 import ProductsManage from "./pages/ProductsManage";
 import { createClient } from "@supabase/supabase-js";
 
