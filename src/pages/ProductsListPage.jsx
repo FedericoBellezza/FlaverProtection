@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card";
-import { products } from "../data/data";
+import { products } from "../data/Data";
 
 export default function ProductsListPage() {
   console.log(products);

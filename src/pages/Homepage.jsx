@@ -1,5 +1,5 @@
 import HorizontalScroller from "../components/HorizontalScroller";
-import { products } from "../data/data";
+import { products } from "../data/Data";
 
 export default function Homepage() {
   return (
