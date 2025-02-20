@@ -1,7 +1,8 @@
 import ProductCard from "./ProductImage";
+import { useGlobalContext } from "../context/GlobalContext";
 
-export default function HorizontalScroller({ array, title }) {
-  const products = array;
+export default function HorizontalScroller({ title }) {
+  const { products } = useGlobalContext();
 
   return (
     <div className="mt-15">

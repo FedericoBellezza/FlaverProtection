@@ -1,21 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../components/Card";
-import { products } from "../data/Data";
+import { useGlobalContext } from "../context/GlobalContext";
 
 export default function ProductsListPage() {
-  console.log(products);
+  const { products, getProducts } = useGlobalContext();
 
   const [activeSearchProduct, setActiveSearchProduct] = useState("");
   const array = [];
 
-  products.map((product) => {
-    product.tag &&
-      product.tag.map((e) => {
-        if (!array.includes(e)) {
-          array.push(e);
-        }
-      });
-  });
+  useEffect(() => getProducts, []);
+
+  products && console.log(products);
+
+  products &&
+    products.forEach((product) => {
+      if (product.tag) {
+        product.tag.forEach((tag) => {
+          if (!array.includes(tag)) {
+            array.push(tag);
+          }
+        });
+      }
+    });
 
   return (
     <>
@@ -44,14 +50,15 @@ export default function ProductsListPage() {
           ))}
         </div>
         <div className="flex flex-wrap">
-          {products.map(
-            (product) =>
-              product.tag &&
-              (product.tag.includes(activeSearchProduct) ||
-                activeSearchProduct === "") && (
-                <Card key={product.id} product={product} />
-              )
-          )}
+          {products &&
+            products.map(
+              (product) =>
+                product.tag &&
+                (product.tag.includes(activeSearchProduct) ||
+                  activeSearchProduct === "") && (
+                  <Card key={product.id} product={product} />
+                )
+            )}
         </div>
       </div>
     </>
