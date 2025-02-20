@@ -12,7 +12,7 @@ export default function ProductsManage() {
         Gestisci i nostri prodotti
       </h1>
       <table className="w-full border">
-        <thead className="bg-gray-200 ">
+        <thead className="bg-gray-200">
           <tr>
             <th>Nome</th>
             <th>Descrizione</th>
