@@ -9,14 +9,16 @@ import ProductsManage from "./pages/ProductsManage";
 import { useEffect } from "react";
 
 function App() {
-  const { products, supabase, setProducts } = useGlobalContext();
-  useEffect(() => {
-    async function getProductss() {
-      const { data } = await supabase.from("products").select("*");
-      setProducts(data);
-    }
-    getProductss();
-  }, []);
+  const { products, supabase, setProducts, getProducts } = useGlobalContext();
+  // useEffect(() => {
+  //   async function getProductss() {
+  //     const { data } = await supabase.from("products").select("*");
+  //     setProducts(data);
+  //   }
+  //   getProductss();
+  // }, []);
+
+  useEffect(() => getProducts, []);
 
   return (
     <BrowserRouter>
