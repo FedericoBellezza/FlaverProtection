@@ -7,7 +7,7 @@ import ProductsListPage from "./pages/ProductsListPage";
 import { GlobalContextProvider } from "./context/GlobalContext";
 import ProductsManage from "./pages/ProductsManage";
 import { createClient } from "@supabase/supabase-js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [products, setProducts] = useState("");
@@ -39,6 +39,10 @@ function App() {
         setProducts(data);
       });
   }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <GlobalContextProvider>
