@@ -17,7 +17,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   //   functions
   async function getProducts() {
-    const { data } = await supabase.from("products").select();
+    const { data } = await supabase.from("products").select("*");
     setProducts(data);
   }
 
