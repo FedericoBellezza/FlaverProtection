@@ -4,23 +4,25 @@ import ContactPage from "./pages/ContactPage";
 
 import DefaultLayout from "./layouts/DefaultLayout";
 import ProductsListPage from "./pages/ProductsListPage";
-import { GlobalContextProvider } from "./context/GlobalContext";
+import { useGlobalContext } from "./context/GlobalContext";
 import ProductsManage from "./pages/ProductsManage";
+import { useEffect } from "react";
 
 function App() {
+  const { products, getProducts } = useGlobalContext();
+  useEffect(() => getProducts, []);
+
   return (
-    <GlobalContextProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<DefaultLayout />}>
-            <Route index element={<Homepage />} />
-            <Route path="contatti" element={<ContactPage />} />
-            <Route path="prodotti" element={<ProductsListPage />} />
-            <Route path="gestisci-prodotti" element={<ProductsManage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </GlobalContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DefaultLayout />}>
+          <Route index element={<Homepage />} />
+          <Route path="contatti" element={<ContactPage />} />
+          <Route path="prodotti" element={<ProductsListPage />} />
+          <Route path="gestisci-prodotti" element={<ProductsManage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

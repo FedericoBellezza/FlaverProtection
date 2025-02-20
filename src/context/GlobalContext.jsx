@@ -33,7 +33,7 @@ export const GlobalContextProvider = ({ children }) => {
   }
 
   // data to export
-  const data = { products, setProducts, getProducts, addProducts };
+  const data = { products, setProducts, getProducts, addProducts, supabase };
 
   return (
     <GlobalContext.Provider value={data}>{children}</GlobalContext.Provider>
