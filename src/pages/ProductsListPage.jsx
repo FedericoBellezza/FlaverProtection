@@ -24,7 +24,7 @@ export default function ProductsListPage() {
           Tutti i nostri prodotti
         </h1>
 
-        <div className=" flex gap-3 p-3">
+        <div className="flex gap-3 p-3">
           {array.map((e) => (
             <span
               key={e}
