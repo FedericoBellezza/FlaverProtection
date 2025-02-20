@@ -6,8 +6,22 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import ProductsListPage from "./pages/ProductsListPage";
 import { GlobalContextProvider } from "./context/GlobalContext";
 import ProductsManage from "./pages/ProductsManage";
+import { createClient } from "@supabase/supabase-js";
+import { useState } from "react";
 
 function App() {
+  const [products, setProducts] = useState("");
+  // supabase config
+  const supabaseUrl = "https://hrrfdiwpvexyzhdioigj.supabase.co";
+  const supabaseKey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhycmZkaXdwdmV4eXpoZGlvaWdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwNDk5MDUsImV4cCI6MjA1NTYyNTkwNX0.OKZU46kx-IK2EH5sSgxrCciaEe4ZkUjLgUY4qcVOf44";
+  const supabase = createClient(supabaseUrl, supabaseKey);
+  //   functions
+  async function getProducts() {
+    const { data } = await supabase.from("products").select();
+    setProducts(data);
+  }
+
   return (
     <GlobalContextProvider>
       <BrowserRouter>
