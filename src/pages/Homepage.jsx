@@ -5,9 +5,8 @@ import { useGlobalContext } from "../context/GlobalContext";
 
 export default function Homepage() {
   const { getProducts, products } = useGlobalContext();
-  useEffect(() => getProducts, []);
+  // useEffect(() => getProducts, []);
 
-  products && console.log(products);
   return (
     <>
       <div className="custom-container">
