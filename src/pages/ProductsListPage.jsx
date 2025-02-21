@@ -3,7 +3,14 @@ import Card from "../components/Card";
 import { useGlobalContext } from "../context/GlobalContext";
 
 export default function ProductsListPage() {
-  const { products, getProducts } = useGlobalContext();
+  const { products, supabase, setProducts, getProducts } = useGlobalContext();
+  useEffect(() => {
+    async function getProductss() {
+      const { data } = await supabase.from("products").select("*");
+      setProducts(data);
+    }
+    getProductss();
+  }, []);
 
   const [activeSearchProduct, setActiveSearchProduct] = useState("");
   const array = [];
