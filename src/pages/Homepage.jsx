@@ -6,8 +6,8 @@ export default function Homepage() {
 
   return (
     <>
-      <div className="hero h-200 w-full">
-        <h1 className="text-[15rem] font-black text-white left-5 bottom-50  absolute">
+      <div className="hero h-200 w-full relative">
+        <h1 className="text-[15rem] font-black text-white left-1/50 bottom-50 absolute">
           Flaver Protection
         </h1>
       </div>
