@@ -17,7 +17,9 @@ function App() {
   //   getProductss();
   // }, []);
 
+  //   on page loading
   useEffect(() => getProducts, []);
+  products && console.log(products);
 
   return (
     <BrowserRouter>

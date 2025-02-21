@@ -18,10 +18,6 @@ export default function AddProductModal() {
   const [price, setPrice] = useState("");
   const [tag, setTag] = useState("");
 
-  //   on page loading
-  useEffect(() => getProducts, []);
-  products && console.log(products);
-
   //   function to add product
   const addProduct = (e) => {
     e.preventDefault();
