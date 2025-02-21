@@ -15,8 +15,6 @@ export default function ProductsListPage() {
   const [activeSearchProduct, setActiveSearchProduct] = useState("");
   const array = [];
 
-  useEffect(() => getProducts, []);
-
   products && console.log(products);
 
   products &&
