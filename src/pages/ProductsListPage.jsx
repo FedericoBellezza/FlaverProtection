@@ -4,15 +4,21 @@ import { useGlobalContext } from "../context/GlobalContext";
 
 export default function ProductsListPage() {
   const { products, supabase, setProducts, getProducts } = useGlobalContext();
+
+  // on page loading
   useEffect(() => {
-    async function getProductss() {
+    async function getProductsOnPage() {
       const { data } = await supabase.from("products").select("*");
       setProducts(data);
     }
-    getProductss();
+    getProductsOnPage();
   }, []);
 
+  // states
   const [activeSearchProduct, setActiveSearchProduct] = useState("");
+  const [search, setSearch] = useState("");
+
+  // variables
   const array = [];
 
   products && console.log(products);
@@ -34,6 +40,14 @@ export default function ProductsListPage() {
         <h1 className="text-4xl font-black mt-15 text-center text-green-700 mb-15">
           Tutti i nostri prodotti
         </h1>
+
+        <input
+          className="px-3 py-2 rounded-lg border mx-3 w-full"
+          placeholder="Cerca per nome"
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
 
         <div className="flex flex-wrap justify-center gap-3  p-3">
           {array.map((e, index) => (
@@ -60,7 +74,11 @@ export default function ProductsListPage() {
               (product) =>
                 product.tag &&
                 (product.tag.includes(activeSearchProduct) ||
-                  activeSearchProduct === "") && (
+                  activeSearchProduct === "") &&
+                (search === "" ||
+                  product.name
+                    .toLowerCase()
+                    .includes(search.toLowerCase())) && (
                   <Card key={product.id} product={product} />
                 )
             )}

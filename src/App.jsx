@@ -10,11 +10,11 @@ import { useEffect } from "react";
 function App() {
   const { products, supabase, setProducts, getProducts } = useGlobalContext();
   useEffect(() => {
-    async function getProductss() {
+    async function getProductsOnPage() {
       const { data } = await supabase.from("products").select("*");
       setProducts(data);
     }
-    getProductss();
+    getProductsOnPage();
   }, []);
 
   return (

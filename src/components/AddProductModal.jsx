@@ -45,7 +45,7 @@ export default function AddProductModal() {
           className={`fixed h-screen w-screen top-0 left-0 opacity-40 bg-black z-1`}
         ></div>
         <div
-          className={`fixed top-25/100   custom-container rounded opacity-100 bg-amber-50 z-2 p-10 py-10 `}
+          className={`fixed top-25/100   custom-container rounded-xl opacity-100 bg-amber-50 z-2 p-10 py-10 `}
         >
           <h2 className="text-2xl font-bold text-center mb-5">
             Aggiungi prodotto

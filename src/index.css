@@ -58,6 +58,40 @@ body {
   background-color: #f3fff3;
 }
 
-.product-card {
-  width: 300px;
+::-webkit-scrollbar {
+  background: transparent;
+
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(189, 189, 189);
+}
+
+.product-card ::-webkit-scrollbar {
+  width: 4px;
+}
+
+.product-card ::-webkit-scrollbar-thumb {
+  background: rgb(189, 189, 189);
+  border-radius: 10px;
+}
+
+.hero {
+  background-image: url("https://www.pulservice.eu/wp-content/uploads/2021/03/pulservice-abbigliamento-antinfortunistica-e-dpi.jpg");
+  background-size: cover;
+  background-position: center center;
+  line-height: 11rem;
+}
+
+.arrivals1 .left {
+  background-image: url("https://www.marinstyle.it/wp-content/uploads/2024/01/1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.arrivals1 .right {
+  background-image: url("https://www.giuriato.it/images/slide_ANTINFORTUNISTICA.jpg");
+  background-size: cover;
+  background-position: center;
 }

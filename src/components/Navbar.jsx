@@ -1,6 +1,8 @@
+import { Link, NavLink } from "react-router";
+
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-4 py-2 bg-green-800 text-white ">
+    <nav className="flex items-center justify-between px-5 py-2 bg-green-800 text-white ">
       {/* navbar logo */}
       <a className="navbar-logo flex items-center justify-center" href="/">
         <img
@@ -12,14 +14,11 @@ export default function Navbar() {
       </a>
 
       {/* navbar links */}
-      <ul className="flex items-center justify-center">
-        <li className="mx-4">
-          <a href="/">Home</a>
-        </li>
-        <li className="mx-4">
-          <a href="/contatti">Contatti</a>
-        </li>
-      </ul>
+      <div className="flex space-x-4 mr-5">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/prodotti">Prodotti</NavLink>
+        <NavLink to="/contatti">Contatti</NavLink>
+      </div>
     </nav>
   );
 }
