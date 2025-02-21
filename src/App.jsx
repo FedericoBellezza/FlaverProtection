@@ -9,17 +9,13 @@ import { useEffect } from "react";
 
 function App() {
   const { products, supabase, setProducts, getProducts } = useGlobalContext();
-  // useEffect(() => {
-  //   async function getProductss() {
-  //     const { data } = await supabase.from("products").select("*");
-  //     setProducts(data);
-  //   }
-  //   getProductss();
-  // }, []);
-
-  //   on page loading
-  useEffect(() => getProducts, []);
-  products && console.log(products);
+  useEffect(() => {
+    async function getProductss() {
+      const { data } = await supabase.from("products").select("*");
+      setProducts(data);
+    }
+    getProductss();
+  }, []);
 
   return (
     <BrowserRouter>
