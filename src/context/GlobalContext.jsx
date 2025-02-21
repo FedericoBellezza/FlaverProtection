@@ -14,6 +14,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   // states
   const [products, setProducts] = useState("");
+  const [addingProduct, setAddingProduct] = useState(false);
 
   //   functions
   async function getProducts() {
@@ -21,19 +22,29 @@ export const GlobalContextProvider = ({ children }) => {
     setProducts(data);
   }
 
-  async function addProducts(name, description, image, price) {
+  async function addProducts(name, description, image, price, tag) {
     const { data, error } = await supabase.from("products").insert([
       {
         name,
         description,
         image,
         price,
+        tag,
       },
     ]);
+    error && console.log(error);
   }
 
   // data to export
-  const data = { products, setProducts, getProducts, addProducts, supabase };
+  const data = {
+    products,
+    setProducts,
+    getProducts,
+    addProducts,
+    supabase,
+    addingProduct,
+    setAddingProduct,
+  };
 
   return (
     <GlobalContext.Provider value={data}>{children}</GlobalContext.Provider>
