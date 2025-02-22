@@ -6,7 +6,7 @@
 
 @media screen and (max-width: 576px) {
   .custom-container {
-    width: 100%;
+    width: 95%;
   }
 }
 
@@ -81,17 +81,30 @@ body {
   background-image: url("https://www.pulservice.eu/wp-content/uploads/2021/03/pulservice-abbigliamento-antinfortunistica-e-dpi.jpg");
   background-size: cover;
   background-position: center center;
+  background-blend-mode: overlay;
+
   line-height: 11rem;
 }
 
-.arrivals1 .left {
-  background-image: url("https://www.marinstyle.it/wp-content/uploads/2024/01/1.png");
+.arrivals1,
+.arrivals2,
+.arrivals3 {
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-blend-mode: overlay;
 }
 
-.arrivals1 .right {
-  background-image: url("https://www.giuriato.it/images/slide_ANTINFORTUNISTICA.jpg");
-  background-size: cover;
-  background-position: center;
+.arrivals1 {
+  background-image: url("https://ferramentabastino.it/wp-content/uploads/2023/10/kapriol_dynamic-min.jpeg");
+}
+.arrivals2 {
+  background-image: url("https://www.ambientesicurezzaweb.it/wp-content/uploads/sites/5/2024/03/CALZATURE.jpg");
+}
+.arrivals3 {
+  background-image: url("https://www.indusegur.com.pe/wp-content/uploads/2024/03/respirador-con-filtro-de-aire-casa-lima.webp ");
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
 }
