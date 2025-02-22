@@ -74,15 +74,16 @@ export default function Homepage() {
         {/* special offers */}
         <div className="mt-10">
           <h2 className="text-3xl  font-bold">Nuove uscite</h2>
-          <div className="flex flex-wrap xl:flex-nowrap  gap-3 justify-between mt-5 ">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 flex-wrap xl:flex-nowrap  gap-3 justify-between mt-5 ">
             {/* prodotto  */}
-            <div className="  rounded-xl shadow-lg overflow-hidden">
+            <div className=" h-100  rounded-xl shadow-lg overflow-hidden">
               <img
-                className=""
+                className="h-80 w-full object-cover"
                 src="https://media.adeo.com/media/619343/media.jpg?width=650&height=650&format=jpg&quality=80&fit=bounds"
                 alt=""
               />
-              <div className="p-3 bg-white relative">
+              <div className="p-3 h-full bg-white relative">
                 <h2 className=" font-bold">Nome del prodotto</h2>
                 <p className=" text-slate-600">€ 15.90</p>
                 <button
@@ -112,7 +113,7 @@ export default function Homepage() {
               </div>
             </div>
             {/* prodotto  */}
-            <div className="  rounded-xl shadow-lg overflow-hidden">
+            <div className="rounded-xl shadow-lg overflow-hidden">
               <img
                 className=""
                 src="https://media.adeo.com/media/619343/media.jpg?width=650&height=650&format=jpg&quality=80&fit=bounds"
